@@ -1,0 +1,26 @@
+{
+    "name": "Epilgrim/ModifyRequestHeadersBundle",
+    "type": "symfony-bundle",
+    "description": "Symfony bundle to inject request headers",
+    "keywords": ["request headers", "reverse proxy"],
+    "homepage": "http://github.com/Epilgrim/ModifyRequestHeadersBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Juan Peri",
+            "email": "eternoperegrino@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": ">=2.1, <2.3-dev"
+    },
+    "require-dev": {
+        "symfony/yaml": "2.1.*"
+    },
+    "autoload": {
+        "psr-0": { "Epilgrim\\ModifyRequestHeadersBundle": "" }
+    },
+    "minimum-stability": "dev",
+    "target-dir": "Epilgrim/ModifyRequestHeadersBundle"
+}
