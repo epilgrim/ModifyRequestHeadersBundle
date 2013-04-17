@@ -10,18 +10,25 @@ class MenuPassTest extends \PHPUnit_Framework_TestCase
 {
     public function testThatChecksRequestType()
     {
+        $request = new Request();
+
         $event = $this->getMockBuilder('Symfony\Component\HttpKernel\Event\GetResponseEvent')
             ->disableOriginalConstructor()
             ->getMock();
         $event->expects($this->atLeastOnce())
             ->method('getRequestType')
             ->will($this->returnValue(HttpKernelInterface::MASTER_REQUEST));
+        $event->expects($this->any())
+            ->method('getRequest')
+            ->will($this->returnValue($request));
 
         $listener = new RequestListener(array());
         $listener->onKernelRequest($event);
     }
 
     public function testDoesntDoAnythingIfNotMasterRequest(){
+        $request = new Request();
+
         $event = $this->getMockBuilder('Symfony\Component\HttpKernel\Event\GetResponseEvent')
             ->disableOriginalConstructor()
             ->getMock();
