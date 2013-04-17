@@ -1,5 +1,5 @@
 {
-    "name": "Epilgrim/ModifyRequestHeadersBundle",
+    "name": "epilgrim/modify-request-headers-bundle",
     "type": "symfony-bundle",
     "description": "Symfony bundle to inject request headers",
     "keywords": ["request headers", "reverse proxy"],
