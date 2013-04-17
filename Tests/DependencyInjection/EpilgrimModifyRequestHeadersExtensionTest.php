@@ -44,7 +44,7 @@ class EpilgrimModifyRequestHeadersExtensionTest extends \PHPUnit_Framework_TestC
     {
         $loader = new EpilgrimModifyRequestHeadersExtension();
         $config = $this->getFullConfig();
-        unset($config['headers']['head1']['value']);
+        unset($config['headers'][0]['value']);
         $loader->load(array($config), new ContainerBuilder());
     }
 
@@ -55,7 +55,7 @@ class EpilgrimModifyRequestHeadersExtensionTest extends \PHPUnit_Framework_TestC
     {
         $loader = new EpilgrimModifyRequestHeadersExtension();
         $config = $this->getFullConfig();
-        unset($config['headers']['head1']['name']);
+        unset($config['headers'][0]['name']);
         $loader->load(array($config), new ContainerBuilder());
     }
 
@@ -78,15 +78,9 @@ EOF;
     {
         $yaml = <<<EOF
 headers:
-    head1:
-        name: x_forwarded_proto
-        value: https
-    head2:
-        name: x_forwarded_port
-        value: 8443
-    head3:
-        name: x_forwarded_host
-        value: epilgrim.com
+    - {name: x_forwarded_proto, value: https}
+    - {name: x_forwarded_port, value: 8443}
+    - {name: x_forwarded_host, value: epilgrim.com}
 listener_priority: 255
 EOF;
         $parser = new Parser();
