@@ -10,6 +10,8 @@ Features include:
 - Set the custom headers
 - Set the priority we want the listener to run when the kernel event.
 
+[![Build Status](https://travis-ci.org/Epilgrim/ModifyRequestHeadersBundle.png)](https://travis-ci.org/Epilgrim/ModifyRequestHeadersBundle)
+
 Installation
 ------------
 
