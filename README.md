@@ -23,7 +23,7 @@ Add EpilgrimModifyRequestHeadersBundle in your composer.json:
 ```js
 {
     "require": {
-        "Epilgrim/ModifyRequestHeadersBundle": "*"
+        "epilgrim/modify-request-headers-bundle": "*"
     }
 }
 ```
@@ -51,13 +51,14 @@ public function registerBundles()
 ```
 
 3. Configure your application's config.yml
+
 ``` yaml
 # app/config/config.yml
 epilgrim_modify_request_headers:
-	headers:
-	    - {name: x_forwarded_proto, value: https}
-	    - {name: header2, value: value_2}
-	listener_priority: 64
+    headers:
+        - {name: x_forwarded_proto, value: https}
+        - {name: header2, value: value_2}
+    listener_priority: 64
 ```
 You can add as many headers as you want.
 
